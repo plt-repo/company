@@ -16,7 +16,23 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from rest_framework.permissions import AllowAny
+from drf_yasg import openapi
+from drf_yasg.views import get_schema_view
+
+
+schema_view = get_schema_view(
+   openapi.Info(
+      title="Company API",
+      default_version='v1',
+      contact=openapi.Contact(email="test-task@gmail.com"),
+      license=openapi.License(name="MIT License"),
+   ),
+   public=True,
+   permission_classes=[AllowAny]
+)
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin-dashboard/', admin.site.urls),
+    path('', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
 ]
