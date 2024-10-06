@@ -1,3 +1,4 @@
+from rest_framework.permissions import AllowAny
 from rest_framework.viewsets import GenericViewSet
 from rest_framework.mixins import ListModelMixin
 
@@ -9,3 +10,4 @@ class DepartmentViewSet(ListModelMixin, GenericViewSet):
     queryset = Department.objects.all()
     serializer_class = DepartmentSerializer
     pagination_class = None
+    permission_classes = [AllowAny]
