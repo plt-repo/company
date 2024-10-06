@@ -2,7 +2,7 @@ from rest_framework.viewsets import GenericViewSet
 from rest_framework.mixins import ListModelMixin
 
 from project.apps.departments.models import Department
-from project.apps.departments.serializers import DepartmentSerializer
+from project.restapi.v1.serializers import DepartmentSerializer
 
 
 class DepartmentViewSet(ListModelMixin, GenericViewSet):

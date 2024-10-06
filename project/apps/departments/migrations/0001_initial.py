@@ -21,18 +21,20 @@ class Migration(migrations.Migration):
             options={
                 'verbose_name': 'Департамент',
                 'verbose_name_plural': 'Департаменты',
+                'ordering': ['id'],
             },
         ),
         migrations.CreateModel(
             name='Position',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=255, verbose_name='Название')),
+                ('name', models.CharField(db_index=True, max_length=255, verbose_name='Название')),
                 ('department', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='positions', to='departments.department', verbose_name='Департамент')),
             ],
             options={
                 'verbose_name': 'Должность',
                 'verbose_name_plural': 'Должности',
+                'ordering': ['id'],
                 'unique_together': {('name', 'department')},
             },
         ),

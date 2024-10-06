@@ -28,6 +28,7 @@ class Migration(migrations.Migration):
             options={
                 'verbose_name': 'Сотрудник',
                 'verbose_name_plural': 'Сотрудники',
+                'ordering': ['id'],
                 'unique_together': {('first_name', 'last_name', 'father_name', 'age', 'position')},
             },
         ),

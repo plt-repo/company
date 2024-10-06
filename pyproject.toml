@@ -7,14 +7,15 @@ license = "MIT"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.10"
-django = "^5.1.1"
-djangorestframework = "^3.15.2"
-django-environ = "^0.11.2"
-psycopg2-binary = "^2.9.9"
-drf-yasg = "^1.21.7"
-pillow = "^10.4.0"
-django-filter = "^24.3"
+python = "3.10.9"
+django = "5.1.1"
+djangorestframework = "3.15.2"
+django-environ = "0.11.2"
+psycopg2-binary = "2.9.9"
+drf-yasg = "1.21.7"
+pillow = "10.4.0"
+django-filter = "24.3"
+django-redis = "5.4.0"
 
 
 [build-system]

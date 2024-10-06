@@ -20,3 +20,4 @@ class Employee(models.Model):
         verbose_name = _('Сотрудник')
         verbose_name_plural = _('Сотрудники')
         unique_together = [["first_name", "last_name", "father_name", "age", "position"]]
+        ordering = ["id"]

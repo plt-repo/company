@@ -7,7 +7,7 @@ from project.apps.departments.models import Department, Position
 
 @admin.register(Department)
 class DepartmentAdmin(admin.ModelAdmin):
-    list_display = ['id', 'name']
+    list_display = ['id', 'name', 'employees_count', 'employees_total_salaries']
     search_fields = ['name']
 
 
